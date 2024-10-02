@@ -1,0 +1,521 @@
+
+
+:root {
+	--primary-color: rgb(16, 159, 175);
+	--second-color: white;
+
+	scroll-behavior: smooth;
+}
+
+
+@mixin pageTitles {
+	color: transparent;
+	text-align: center;
+	font-size: 64px;
+	margin: 0;
+	padding: 20px 0;
+	text-transform: uppercase;
+	border: 2px solid var(--primary-color);
+	backdrop-filter: blur(10px);
+	-webkit-text-stroke: 2px var(--primary-color);
+}
+
+@mixin itemBGcover {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	border: 1px solid var(--primary-color);
+}
+
+@mixin aboutBlockTitle {
+	font-size: 30px;
+	color: var(--second-color);
+	text-transform: uppercase;
+	text-decoration: underline overline;
+	text-underline-offset: 5px;
+	text-decoration-color: var(--primary-color);
+}
+
+@mixin aboutBlockText {
+	font-size: 18px;
+	color: var(--second-color);
+	padding: 0 10px;
+	text-align: center;
+}
+
+@mixin aboutBlockImg {
+	height: 300px;
+	width: 390px;
+	margin: 5px;
+	border: 1px solid var(--primary-color);
+	background-position: center;
+	background-size: cover;
+}
+
+
+
+
+
+body {
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+
+.container {
+	margin: 0 auto;
+	width: 1500px;
+
+	background-image: url(/img/headBG.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+.page-bg {
+	height: 100%;
+}
+
+
+.page-head {
+
+	border-bottom: 5px double var(--primary-color);
+	border-top: 5px double var(--primary-color);
+	margin-bottom: 20px;
+	height: 100px;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+		&__logo {
+			height: 90px;
+			margin-left: 20px;
+
+			filter: brightness(0) invert(1);
+		}
+
+		&__nav-bar {
+			display: flex;
+			gap: 50px;
+
+			
+
+			&--links{
+				text-decoration: none;
+				font-size: 30px;
+				color: var(--second-color);
+				text-transform: uppercase;
+			}
+			&--links:hover {
+				color: var(--primary-color);
+				scale: 1.3;
+				
+				transition: all 0.5s;
+			}
+		}
+		 
+		
+
+		&__btn-login {
+			border-radius: 50px;
+			border: 2px solid var(--primary-color);
+			width: 200px;
+			height: 40px;
+			margin: 0 20px;
+			background-color: transparent;
+			color: var(--primary-color);
+			font-size: 18px;
+			cursor: pointer;
+		}
+
+		&__btn-login:hover {
+			scale: 1.1;
+			transition: all 0.5s;
+		}
+
+		
+}
+
+
+.welcome{
+	width: 370px;
+	padding: 0 50px;
+	color: var(--second-color);
+
+
+
+	&__title {
+		text-align: center;
+		font-size: 56px;
+	}
+
+	&__subtitle {
+		font-size: 42px;
+	}
+
+	&__text {
+		font-size: 22px;
+		text-align: center;
+
+	}
+
+	&__text2 {
+		padding: 20px 0 50px 0;
+		font-size: 28px;
+		text-align: center;
+	}
+}
+
+
+
+.store-container {
+	&__title {
+		@include pageTitles;
+	}
+
+
+
+	&__blocks {
+		display: grid;
+		grid-template-columns: 3fr 1fr;
+		gap: 50px;
+		margin: 50px 20px;
+	}
+
+}
+
+.block-best-sale {
+	&__title {
+		color: var(--second-color);
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 30px;
+	}
+
+	&__subtitle {
+		color: var(--second-color);
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 26px;
+	}
+
+	&__info {
+		color: var(--second-color);
+		font-size: 20px;
+	
+	}
+
+	&__img {
+		height: 570px;
+		background-image: url(/img/mainBG.jpg);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		box-shadow: 2px 6px 20px 2px var(--primary-color), 2px 6px 20px 2px var(--primary-color);
+		border: 1px solid black;
+	}
+}
+
+.block-categories {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px;
+	border-top: 1px solid var(--primary-color);
+	border-bottom: 1px solid var(--primary-color);
+
+	&__title {
+		color: var(--second-color);
+		font-size: 36px;
+		text-transform: uppercase;
+	}
+
+	&__grid-items {
+		display: grid;
+		grid-template-columns: repeat(2, 200px);
+		grid-template-rows: repeat(3, 200px);
+		gap: 30px;
+	}
+
+	&__grid-links {
+		text-decoration: none;
+		color: var(--second-color);
+		display: grid;
+		place-items: center;
+		font-size: 20px;
+		text-transform: uppercase;
+	}
+
+		&__btn-buy {
+			height: 60px;
+			width: 75%;
+			margin: 30px 0;
+			font-size: 22px;
+			font-weight: 600;
+			text-transform: uppercase;
+			background-color: transparent;
+			border: 3px solid var(--primary-color);
+			border-radius: 50px;
+			color: var(--primary-color);
+			cursor: pointer;
+		}
+
+		&__btn-buy:hover {
+			scale: 1.2;
+			transition: all 0.5s;
+			border: 2px solid var(--primary-color);
+			box-shadow: 0 0 5px 5px var(--primary-color);
+			filter: drop-shadow(1px 1px 5px var(--primary-color));
+		}
+
+
+
+	&__grid-item {
+		@include itemBGcover;
+		padding-top: 10px;
+
+	}
+
+	&__grid-item:hover {
+		scale: 1.2;
+		transition: all 0.5s;
+	}
+	
+
+	&__grid-item, .sport-bike {
+		background-image: url(/img/moto1.jpg);
+	}
+
+
+	&__grid-item, .chopper {
+		background-image: url(/img/chopper.jpg);
+	}
+
+	&__grid-item, .sport-touring {
+		background-image: url(/img/touring.jpg);
+	}
+
+	&__grid-item, .retro {
+		background-image: url(/img/old.jpg);
+	}
+
+	&__grid-item, .motocross {
+		background-image: url(/img/motocross.jpg);
+	}
+
+	&__grid-item, .more-motorcycles {
+		background-image: url(/img/viewall.jpg);
+	}
+}
+
+.about-container {
+	height: 100%;
+
+	&__title {
+		@include pageTitles;
+	}
+
+	&__subtitle {
+		@include aboutBlockTitle;
+		text-decoration: none;
+		display: grid;
+		place-items: center;
+		margin: 70px 0 30px 0;
+	}
+
+	&__blocks {
+		display: flex;
+		justify-content: space-around;
+		margin: 50px 0;
+	}
+
+	&__block {
+		height: 600px;
+		width: 400px;
+		border: 1px solid var(--primary-color);
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__block-title {
+		@include aboutBlockTitle;
+	}
+
+	&__block-text {
+		@include aboutBlockText;
+	}
+
+	&__block-sales-img {
+		background-image: url(/img/aboutSales.jpg);
+		@include aboutBlockImg;
+	}
+
+	&__block-custom-img {
+		background-image: url(/img/aboutCustom.jpg);
+		@include aboutBlockImg;
+	}
+
+	&__block-repair-img {
+		background-image: url(/img/aboutRepair.jpg);
+		@include aboutBlockImg;
+	}
+
+
+
+
+}
+
+
+
+
+.contact-container{
+	height: 100%;
+
+	&__title {
+		@include pageTitles;
+	}
+
+	&__blocks {
+		color: var(--second-color);
+		border: 1px solid var(--primary-color);
+		display: flex;
+		justify-content: space-between;
+		padding: 100px 50px;
+	}
+
+	&__block {
+
+		width: calc(50% - 30px);
+		margin-bottom: 50px;
+	}
+
+	&__block-info-title {
+		
+		font-size: 36px;
+		text-transform: uppercase;
+	}
+
+	
+
+	&__row {
+		display: flex;
+		padding: 10px 0;
+		align-items: center;
+		padding-top: 20px;
+	}
+
+	&__row, &__info-row {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	&__title-row {
+		font-size: 24px;
+		text-transform: uppercase;
+	}
+
+	&__subtitle-row {
+		font-size: 22px;
+	}
+
+	&__info-row {
+		padding-top: 10px;
+	}
+
+
+
+}
+
+.form-info-text {
+	font-size: 30px;
+}
+
+.block-form {
+	width: 700px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	
+
+	&__fields, &__row {
+		display: flex;
+		gap: 20px;
+		width: 100%;
+	}
+
+	&__input {
+		background-color: transparent;
+		height: 60px;
+		width: 100%;
+		font-size: 24px;
+		color: var(--second-color);
+		padding-left: 10px;
+		border: 4px solid var(--primary-color);
+	}
+
+	&__textarea {
+		resize: none;
+		font-size: 24px;
+		color: var(--second-color);
+		padding-left: 10px;
+		background-color: transparent;
+		border: 4px solid var(--primary-color);
+	}
+
+	&__btns {
+		display: flex;
+		gap: 20px;
+	}
+
+	&__submit-btn, &__reset-btn {
+		height: 60px;
+		width: 200px;
+		font-size: 24px;
+		font-weight: 600;
+		cursor: pointer;
+		background-color: transparent;
+		color: var(--primary-color);
+		border: 4px solid var(--primary-color);
+	}
+}
+
+::placeholder {
+	font-size: 24px;
+	padding-left: 20px;
+	color: var(--second-color);
+}
+
+i {
+	font-size: 40px;
+	color: var(--primary-color);
+}
+
+
+.footer {
+	height: 100px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border: 2px solid var(--primary-color);
+
+	&__creator-name {
+		font-size: 36px;
+		color: var(--second-color);
+		text-transform: uppercase;
+	}
+
+
+
+	&__info-text {
+		font-size: 28px;
+		color: var(--second-color);
+	}
+}
+
